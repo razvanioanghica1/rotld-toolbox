@@ -1,11 +1,7 @@
 const convertPunycode = require(`../convertPunycode`);
 
 test(`convertPunycode without argument`, () => {
-  expect(() => convertPunycode()).toThrow();
-});
-
-test(`convertPunycode with empty argument`, () => {
-  expect(() => convertPunycode(``)).toThrow();
+  expect(() => convertPunycode.toUnicode()).toThrow();
 });
 
 test(`convertPunycode with valid argument to Unicode`, () => {

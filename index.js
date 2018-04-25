@@ -7,3 +7,8 @@ exports.isRoTLDReservedDomain = require(`./isRoTLDReservedDomain`);
 exports.queryRoTLDWhoisServer = require(`./queryRoTLDWhoisServer`);
 exports.RoTLDReservedDomains = require(`./RoTLDReservedDomains`);
 exports.RoTLDSubdomains = require(`./RoTLDSubdomains`);
+
+
+const convertPunycode = require(`./convertPunycode`);
+
+console.log(convertPunycode.toUnicode(''));
