@@ -3,18 +3,21 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls -v"
   },
   "dependencies": {
     "punycode": "^2.1.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "jest": "^22.4.3"
   },
   "repository": "alinchican/rotld-toolbox",
   "bugs": "alinchican/rotld-toolbox",
   "description": "Simple tools for working with RoTLD (Romania Top Level Domain).",
   "license": "MIT",
-  "keywords": ["rotld"],
+  "keywords": [
+    "rotld"
+  ],
   "author": "Alin Chican <alin@chican.ro> (https://chican.ro/)"
 }
