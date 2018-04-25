@@ -22,6 +22,6 @@ test(`getDomainNameFromURL with invalid argument`, () => {
 
 test(`getDomainNameFromURL with invalid argument containing an IP address`, () => {
   expect(() =>
-    getDomainNameFromURL(`3ffe:0b00:0000:0000:0001:0000:0000:000a`)
+    getDomainNameFromURL(`http://127.0.0.1`)
   ).toThrow();
 });
