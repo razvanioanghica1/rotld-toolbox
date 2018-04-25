@@ -1,27 +1,27 @@
-const getDomainNameFromUrl = require(`../getDomainNameFromUrl`);
+const getDomainNameFromURL = require(`../getDomainNameFromURL`);
 
-test(`getDomainNameFromUrl without argument`, () => {
-  expect(() => getDomainNameFromUrl()).toThrow();
+test(`getDomainNameFromURL without argument`, () => {
+  expect(() => getDomainNameFromURL()).toThrow();
 });
 
-test(`getDomainNameFromUrl with empty argument`, () => {
-  expect(() => getDomainNameFromUrl(``)).toThrow();
+test(`getDomainNameFromURL with empty argument`, () => {
+  expect(() => getDomainNameFromURL(``)).toThrow();
 });
 
-test(`getDomainNameFromUrl with valid argument`, () => {
+test(`getDomainNameFromURL with valid argument`, () => {
   expect(
-    getDomainNameFromUrl(
+    getDomainNameFromURL(
       `https://user:pass@subdomain.example.com:8080/p/a/t/h?query=string#hash`
     )
   ).toBe(`subdomain.example.com`);
 });
 
-test(`getDomainNameFromUrl with invalid argument`, () => {
-  expect(() => getDomainNameFromUrl(`mailto:example@example.com`)).toThrow();
+test(`getDomainNameFromURL with invalid argument`, () => {
+  expect(() => getDomainNameFromURL(`mailto:example@example.com`)).toThrow();
 });
 
-test(`getDomainNameFromUrl with invalid argument containing an IP address`, () => {
+test(`getDomainNameFromURL with invalid argument containing an IP address`, () => {
   expect(() =>
-    getDomainNameFromUrl(`3ffe:0b00:0000:0000:0001:0000:0000:000a`)
+    getDomainNameFromURL(`3ffe:0b00:0000:0000:0001:0000:0000:000a`)
   ).toThrow();
 });
