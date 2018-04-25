@@ -8,6 +8,10 @@ test(`isRoTLDDomain with empty argument`, () => {
   expect(() => isRoTLDDomain(``)).toThrow();
 });
 
+test(`isRoTLDDomain with invalid domain`, () => {
+  expect(() => isRoTLDDomain(`hellothisisdog`)).toThrow();
+});
+
 test(`isRoTLDDomain with domain that has a romanian tld`, () => {
   expect(isRoTLDDomain(`subdomain.example.ro`)).toBe(true);
 });
