@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --coverageReporters=text-lcov | coveralls -v"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "punycode": "^2.1.0"
