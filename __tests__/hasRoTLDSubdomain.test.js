@@ -1,20 +1,20 @@
 const hasRoTLDSubdomain = require(`../hasRoTLDSubdomain`);
 const RoTLDSubdomains = require(`../RoTLDSubdomains`);
 
-test(`hasRoTLDSubdomain without argument`, () => {
+test(`should throw without argument`, () => {
   expect(() => hasRoTLDSubdomain()).toThrow();
 });
 
-test(`hasRoTLDSubdomain with empty argument`, () => {
+test(`should throw on empty argument`, () => {
   expect(() => hasRoTLDSubdomain(``)).toThrow();
 });
 
-test(`hasRoTLDSubdomain with domain that contains a RoTLD subdomain`, () => {
+test(`should return true on domain name with RoTLD subdomain`, () => {
   expect(hasRoTLDSubdomain(`subdomain.example.${RoTLDSubdomains[0]}.ro`)).toBe(
     true
   );
 });
 
-test(`hasRoTLDSubdomain with domain that doesn't contain a RoTLD subdomain`, () => {
+test(`should return false on domain name without RoTLD subdomain`, () => {
   expect(hasRoTLDSubdomain(`subdomain.example.ro`)).toBe(false);
 });

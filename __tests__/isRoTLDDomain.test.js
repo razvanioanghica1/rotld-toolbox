@@ -1,21 +1,21 @@
 const isRoTLDDomain = require(`../isRoTLDDomain`);
 
-test(`isRoTLDDomain without argument`, () => {
+test(`should throw without argument`, () => {
   expect(() => isRoTLDDomain()).toThrow();
 });
 
-test(`isRoTLDDomain with empty argument`, () => {
+test(`should throw on empty argument`, () => {
   expect(() => isRoTLDDomain(``)).toThrow();
 });
 
-test(`isRoTLDDomain with invalid domain`, () => {
+test(`should throw with invalid domain`, () => {
   expect(() => isRoTLDDomain(`hellothisisdog`)).toThrow();
 });
 
-test(`isRoTLDDomain with domain that has a romanian tld`, () => {
+test(`should return true on domain with romanian tld`, () => {
   expect(isRoTLDDomain(`subdomain.example.ro`)).toBe(true);
 });
 
-test(`isRoTLDDomain with domain that doesn't have a romanian tld`, () => {
+test(`should return false on domain without romanian tld`, () => {
   expect(isRoTLDDomain(`subdomain.example.com`)).toBe(false);
 });

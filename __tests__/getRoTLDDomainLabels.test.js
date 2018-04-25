@@ -1,28 +1,28 @@
 const getRoTLDDomainLabels = require(`../getRoTLDDomainLabels`);
 
-test(`getRoTLDDomainLabels without argument`, () => {
+test(`should throw without argument`, () => {
   expect(() => getRoTLDDomainLabels()).toThrow();
 });
 
-test(`getRoTLDDomainLabels with an empty argument`, () => {
+test(`should throw on empty argument`, () => {
   expect(() => getRoTLDDomainLabels(``)).toThrow();
 });
 
-test(`getRoTLDDomainLabels with a romanian tld domain`, () => {
+test(`should throw on domain without romanian tld`, () => {
+  expect(() => getRoTLDDomainLabels(`example.com`)).toThrow();
+});
+
+test(`should return object containing domain and tld on domain with romanian tld`, () => {
   expect(getRoTLDDomainLabels(`example.ro`)).toEqual({
     domain: `example`,
     tld: `ro`
   });
 });
 
-test(`getRoTLDDomainLabels with a romanian tld domain containing a RoTLD subdomain`, () => {
+test(`should return object containing domain, tld and subdomain on domain with romanian tld and RoTLD subdomain`, () => {
   expect(getRoTLDDomainLabels(`example.com.ro`)).toEqual({
     domain: `example`,
     tld: `ro`,
     tldSubdomain: `com`
   });
-});
-
-test(`getRoTLDDomainLabels with a non-RoTLD domain`, () => {
-  expect(() => getRoTLDDomainLabels(`example.com`)).toThrow();
 });
