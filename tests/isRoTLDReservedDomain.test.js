@@ -9,6 +9,10 @@ test(`isRoTLDReservedDomain with empty argument`, () => {
   expect(() => isRoTLDReservedDomain(``)).toThrow();
 });
 
+test(`isRoTLDReservedDomain with domain that doesn't have a romanian tld`, () => {
+  expect(isRoTLDReservedDomain(`subdomain.example.com`)).toBe(false);
+});
+
 test(`isRoTLDReservedDomain with domain that is a RoTLD reserved domain`, () => {
   expect(isRoTLDReservedDomain(`${RoTLDReservedDomains[1]}.ro`)).toBe(true);
 });
