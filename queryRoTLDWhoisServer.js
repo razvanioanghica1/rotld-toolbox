@@ -23,11 +23,14 @@ const queryRoTLDWhois = domainName =>
     connection.on(`close`, () => resolve(whoisResult));
 
     connection.on(`timeout`, () => {
-      connection.destroy();
+      connection.end();
       reject(new Error(`Whois server connection timeout.`));
     });
 
-    connection.on(`error`, error => reject(new Error(error)));
+    connection.on(`error`, whoisError => {
+      connection.destroy();
+      reject(new Error(whoisError))
+    });
   });
 
 module.exports = queryRoTLDWhois;
