@@ -2,7 +2,7 @@ const isRoTLDDomain = require(`./isRoTLDDomain`);
 const net = require(`net`);
 const { toASCII } = require(`./convertPunycode`);
 
-const queryRoTLDWhois = domainName =>
+const queryRoTLDWhoisServer = domainName =>
   new Promise((resolve, reject) => {
     let whoisResult = ``;
 
@@ -10,27 +10,22 @@ const queryRoTLDWhois = domainName =>
       reject(new Error(`Can't query a domain name that doesn't contain a romanian top level domain.`));
     }
 
-    const whoisPort = 43;
-    const connection = net.connect(whoisPort, `whois.rotld.ro`, () => {
+    const connection = net.connect(43, `whois.rotld.ro`, () => {
       connection.write(`${toASCII(domainName)}\r\n`);
     });
 
-    connection.on(`data`, chunk => {
-      whoisResult = chunk.toString();
+    connection.on(`data`, data => {
+      whoisResult = data.toString();
       connection.end();
     });
 
-    connection.on(`close`, () => resolve(whoisResult));
-
-    connection.on(`timeout`, () => {
-      connection.end();
-      reject(new Error(`Whois server connection timeout.`));
+    connection.on(`close`, () => {
+      resolve(whoisResult)
     });
 
-    connection.on(`error`, whoisError => {
-      connection.destroy();
-      reject(new Error(whoisError))
+    connection.on(`error`, connectionError => {
+      reject(connectionError);
     });
   });
 
-module.exports = queryRoTLDWhois;
+module.exports = queryRoTLDWhoisServer;
