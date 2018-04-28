@@ -12,12 +12,6 @@ test(`should throw on invalid URL`, () => {
   expect(() => getDomainNameFromURL(`mailto:example@example.com`)).toThrow();
 });
 
-test(`should throw on valid URL with IP address`, () => {
-  expect(() =>
-    getDomainNameFromURL(`http://127.0.0.1`)
-  ).toThrow();
-});
-
 test(`should return domain name on valid URL`, () => {
   expect(
     getDomainNameFromURL(
