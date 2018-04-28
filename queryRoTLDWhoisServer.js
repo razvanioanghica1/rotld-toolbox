@@ -15,12 +15,11 @@ const queryRoTLDWhoisServer = domainName =>
     });
 
     connection.on(`data`, data => {
-      whoisResult = data.toString();
-      connection.end();
+      whoisResult += data.toString();
     });
 
     connection.on(`close`, () => {
-      resolve(whoisResult)
+      resolve(whoisResult);
     });
 
     connection.on(`error`, connectionError => {
