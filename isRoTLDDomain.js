@@ -13,13 +13,7 @@ const isRoTLDDomain = domainName => {
     throw new TypeError(`Can't decode domain name.`);
   }
 
-  const domainTld = domainNameLabels[domainNameLabels.length - 1];
-
-  if (domainTld !== `ro`) {
-    return false;
-  }
-
-  return true;
-};
+  return domainNameLabels.pop() === `ro`;
+}
 
 module.exports = isRoTLDDomain;
