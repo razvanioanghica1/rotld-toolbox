@@ -1,6 +1,6 @@
 const isRoTLDDomain = require(`./isRoTLDDomain.js`);
 const getRoTLDDomainLabels = require(`./getRoTLDDomainLabels`);
-const convertPunycode = require(`./convertPunycode`);
+const { toUnicode } = require(`./convertPunycode`);
 const RoTLDReservedDomains = require(`./RoTLDReservedDomains`);
 
 const isRoTLDReservedDomain = domainName => {
@@ -9,7 +9,7 @@ const isRoTLDReservedDomain = domainName => {
   }
 
   const domainNameLabels = getRoTLDDomainLabels(
-    convertPunycode.toUnicode(domainName)
+    toUnicode(domainName)
   );
 
   let domain = `${domainNameLabels.domain}`;

@@ -1,21 +1,17 @@
 const punycode = require(`punycode`);
 
-class convertPunycode {
-  static isParameterValid(string) {
-    if (typeof string !== `string`) {
-      throw new TypeError(`Argument must be a string.`);
-    }
-
-    return true;
+const isParameterValid = string => {
+  if (typeof string !== `string`) {
+    throw new TypeError(`Argument must be a string.`);
   }
 
-  static toUnicode(string) {
-    return this.isParameterValid(string) && punycode.toUnicode(string);
-  }
-
-  static toASCII(string) {
-    return this.isParameterValid(string) && punycode.toASCII(string)
-  }
+  return true;
 }
 
-module.exports = convertPunycode;
+exports.toUnicode = string => {
+  return isParameterValid(string) && punycode.toUnicode(string)
+};
+
+exports.toASCII = string => {
+  return isParameterValid(string) && punycode.toASCII(string)
+}

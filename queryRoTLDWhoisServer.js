@@ -1,6 +1,6 @@
 const isRoTLDDomain = require(`./isRoTLDDomain`);
 const net = require(`net`);
-const convertPunycode = require(`./convertPunycode`);
+const { toASCII } = require(`./convertPunycode`);
 
 const queryRoTLDWhois = domainName =>
   new Promise((resolve, reject) => {
@@ -12,7 +12,7 @@ const queryRoTLDWhois = domainName =>
 
     const whoisPort = 43;
     const connection = net.connect(whoisPort, `whois.rotld.ro`, () => {
-      connection.write(`${convertPunycode.toASCII(domainName)}\r\n`);
+      connection.write(`${toASCII(domainName)}\r\n`);
     });
 
     connection.on(`data`, chunk => {
