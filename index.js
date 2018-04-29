@@ -5,3 +5,4 @@ exports.hasRoTLDSubdomain = require(`./hasRoTLDSubdomain`);
 exports.isRoTLDDomain = require(`./isRoTLDDomain`);
 exports.isRoTLDReservedDomain = require(`./isRoTLDReservedDomain`);
 exports.queryRoTLDWhoisServer = require(`./queryRoTLDWhoisServer`);
+exports.cleanWhoisResult = require(`./cleanWhoisResult`);
