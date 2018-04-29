@@ -1,4 +1,6 @@
-const punycode = require(`punycode`);
+// Import userland punycode module not deprecated core
+// https://github.com/bestiejs/punycode.js/issues/79
+const punycode = require("punycode/");
 
 const isParameterValid = string => {
   if (typeof string !== `string`) {
