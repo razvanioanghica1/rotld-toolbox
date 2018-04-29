@@ -3,17 +3,25 @@
   "version": "0.1.1",
   "main": "index.js",
   "engines": {
-    "node": ">=6"
+    "node": ">=6.0.0"
   },
   "scripts": {
-    "test": "jest --coverage"
+    "pretest": "yarn lint",
+    "test": "jest --coverage",
+    "lint": "eslint ."
   },
   "dependencies": {
     "punycode": "^2.1.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "jest": "^22.4.3"
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-jest": "^21.15.1",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^22.4.3",
+    "prettier": "^1.12.1"
   },
   "repository": "alinchican/rotld-toolbox",
   "bugs": "https://github.com/alinchican/rotld-toolbox/issues",
