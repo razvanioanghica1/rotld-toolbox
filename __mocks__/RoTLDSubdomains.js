@@ -1,5 +1,3 @@
-const RoTLDSubdomains = [
-  `www`
-];
+const RoTLDSubdomains = ["www"];
 
 module.exports = RoTLDSubdomains;

@@ -6,17 +6,17 @@
  */
 
 const RoTLDSubdomains = [
-  `com`,
-  `org`,
-  `tm`,
-  `nt`,
-  `nom`,
-  `info`,
-  `rec`,
-  `arts`,
-  `firm`,
-  `store`,
-  `www`
+  "com",
+  "org",
+  "tm",
+  "nt",
+  "nom",
+  "info",
+  "rec",
+  "arts",
+  "firm",
+  "store",
+  "www"
 ];
 
 module.exports = RoTLDSubdomains;

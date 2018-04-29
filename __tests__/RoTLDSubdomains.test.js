@@ -1,9 +1,9 @@
-const RoTLDSubdomains = require(`../RoTLDSubdomains`);
+const RoTLDSubdomains = require("../RoTLDSubdomains");
 
-test(`should be array`, () => {
+test("should be array", () => {
   expect(Array.isArray(RoTLDSubdomains)).toBe(true);
 });
 
-test(`shouldn't be empty`, () => {
+test("shouldn't be empty", () => {
   expect(Boolean(RoTLDSubdomains.length)).toBe(true);
 });

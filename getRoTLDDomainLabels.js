@@ -1,16 +1,16 @@
-const roTLDSubdomains = require(`./RoTLDSubdomains`);
-const isRoTLDDomain = require(`./isRoTLDDomain`);
+const roTLDSubdomains = require("./RoTLDSubdomains");
+const isRoTLDDomain = require("./isRoTLDDomain");
 
 const getRoTLDDomainNameLabels = domainName => {
   if (!isRoTLDDomain(domainName)) {
-    throw new Error(`Can't decode a domain name that doesn't contain a romanian top level domain.`);
+    throw new Error(
+      "Can't decode a domain name that doesn't contain a Romanian top level domain."
+    );
   }
 
   const domainNameLabels = {};
-  domainNameLabels.tld = `ro`;
-
-  const domainNameParts = domainName.split(`.`);
-
+  domainNameLabels.tld = "ro";
+  const domainNameParts = domainName.split(".");
   const domainNameDomain = domainNameParts[domainNameParts.length - 2];
 
   if (roTLDSubdomains.includes(domainNameDomain)) {
