@@ -15,7 +15,7 @@ const isRoTLDDomain = require('rotld-toolbox/isRoTLDDomain');
 
 console.log(isRoTLDDomain('ș.ro'));
 // -> true
-console.log(isRoTLDDomain('example.com'));
+console.log(isRoTLDDomain('ș.com'));
 // -> false
 ```
 
@@ -24,9 +24,9 @@ console.log(isRoTLDDomain('example.com'));
 ```js
 const hasRoTLDSubdomain = require('rotld-toolbox/hasRoTLDSubdomain');
 
-console.log(hasRoTLDSubdomain('xn--yla.ro'));
+console.log(hasRoTLDSubdomain('ș.ro'));
 // -> false
-console.log(hasRoTLDSubdomain('xn--yla.www.ro'));
+console.log(hasRoTLDSubdomain('ș.www.ro'));
 // -> true
 ```
 
