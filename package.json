@@ -7,8 +7,8 @@
   },
   "scripts": {
     "pretest": "yarn lint",
-    "test": "jest --coverage",
-    "lint": "eslint ."
+    "test": "jest",
+    "lint": "eslint .",
     "prepack": "yarn lint && yarn test"
   },
   "dependencies": {
