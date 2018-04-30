@@ -10,10 +10,10 @@ const isParameterValid = string => {
   return true;
 };
 
-exports.toUnicode = string => {
-  return isParameterValid(string) && punycode.toUnicode(string);
-};
+const toASCII = string => isParameterValid(string) && punycode.toASCII(string);
 
-exports.toASCII = string => {
-  return isParameterValid(string) && punycode.toASCII(string);
-};
+const toUnicode = string =>
+  isParameterValid(string) && punycode.toUnicode(string);
+
+exports.toUnicode = toUnicode;
+exports.toASCII = toASCII;
