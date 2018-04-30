@@ -1,6 +1,6 @@
 const { URL } = require("url");
 
-const getHostname = url => {
+const getHostnameFromUrl = url => {
   const parsedURL = new URL(url);
 
   if (!parsedURL.hostname.length) {
@@ -12,4 +12,4 @@ const getHostname = url => {
   return parsedURL.hostname;
 };
 
-module.exports = getHostname;
+module.exports = getHostnameFromUrl;
