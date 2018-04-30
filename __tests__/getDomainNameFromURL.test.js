@@ -9,13 +9,13 @@ test("should throw on empty argument", () => {
 });
 
 test("should throw on invalid URL", () => {
-  expect(() => getDomainNameFromURL("mailto:example@example.com")).toThrow();
+  expect(() => getDomainNameFromURL("mailto:exemplu@ș.com")).toThrow();
 });
 
 test("should return domain name on valid URL", () => {
   expect(
     getDomainNameFromURL(
-      "https://user:pass@subdomain.example.com:8080/p/a/t/h?query=string#hash"
+      "https://user:pass@subdomeniu.ș.com:8080/p/a/t/h?query=string#hash"
     )
-  ).toBe("subdomain.example.com");
+  ).toBe("subdomeniu.xn--yla.com");
 });

@@ -7,6 +7,8 @@ const getDomainNameFromURL = url => {
     throw new URIError("Can't decode URL.");
   }
 
+  // Hostnames are always returned in ASCII
+  // https://github.com/nodejs/node/issues/18296
   return parsedURL.hostname;
 };
 
