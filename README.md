@@ -2,7 +2,7 @@
 
 Simple tools for working with RoTLD (Romania Top Level Domain).
 
-# Work in progress, preview only! Do not use!#
+# Work in progress, preview only! Do not use!
 
 rotld-toolbox is available as the `rotld-toolbox` package on [npm](https://www.npmjs.com/). You can find it [here](https://www.npmjs.com/package/rotld-toolbox).
 
