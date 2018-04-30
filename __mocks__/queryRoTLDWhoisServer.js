@@ -5,7 +5,7 @@ const queryRoTLDWhoisServer = domainName =>
     if (!isRoTLDDomain(domainName)) {
       reject(
         new Error(
-          "Can't query a domain name that doesn't contain a romanian top level domain."
+          "Can't query a domain name that doesn't contain a Romanian top level domain."
         )
       );
     }

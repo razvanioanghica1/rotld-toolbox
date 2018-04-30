@@ -12,10 +12,10 @@ test("should throw with invalid domain", () => {
   expect(() => isRoTLDDomain("hellothisisdog")).toThrow();
 });
 
-test("should return true on domain with romanian tld", () => {
+test("should return true on domain with Romanian tld", () => {
   expect(isRoTLDDomain("subdomeniu.ș.ro")).toBe(true);
 });
 
-test("should return false on domain without romanian tld", () => {
+test("should return false on domain without Romanian tld", () => {
   expect(isRoTLDDomain("subdomeniu.ș.com")).toBe(false);
 });

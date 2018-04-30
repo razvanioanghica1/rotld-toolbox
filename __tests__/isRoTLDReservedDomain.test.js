@@ -9,7 +9,7 @@ test("should throw on empty argument", () => {
   expect(() => isRoTLDReservedDomain("")).toThrow();
 });
 
-test("should return false on domain name without romanian tld", () => {
+test("should return false on domain name without Romanian tld", () => {
   expect(isRoTLDReservedDomain("ș.com")).toBe(false);
 });
 
