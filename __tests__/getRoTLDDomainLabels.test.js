@@ -19,10 +19,10 @@ test("should return object containing domain and tld on domain with Romanian tld
   });
 });
 
-test("should return object containing domain, tld and subdomain on domain with Romanian tld and RoTLD subdomain", () => {
+test("should return object containing domain, tld and second level domain on domain with Romanian tld and RoTLD second level domain", () => {
   expect(getRoTLDDomainLabels("ș.rec.ro")).toEqual({
     domain: "xn--yla",
-    tldSubdomain: "rec",
+    tldSecondLevelDomain: "rec",
     tld: "ro"
   });
 });

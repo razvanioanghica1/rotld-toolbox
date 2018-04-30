@@ -12,13 +12,13 @@ const isRoTLDReservedDomain = domainName => {
 
   let domain = `${domainNameLabels.domain}`;
 
-  const domainHasRoTLDSubdomain = Object.prototype.hasOwnProperty.call(
+  const domainHasRoTLDSecondLevelDomain = Object.prototype.hasOwnProperty.call(
     domainNameLabels,
-    "tldSubdomain"
+    "tldSecondLevelDomain"
   );
 
-  if (domainHasRoTLDSubdomain) {
-    domain += `.${domainNameLabels.tldSubdomain}`;
+  if (domainHasRoTLDSecondLevelDomain) {
+    domain += `.${domainNameLabels.tldSecondLevelDomain}`;
   }
 
   return RoTLDReservedDomains.includes(toUnicode(domain));

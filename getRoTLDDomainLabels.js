@@ -1,4 +1,4 @@
-const roTLDSubdomains = require("./RoTLDSubdomains");
+const RoTLDSecondLevelDomains = require("./RoTLDSecondLevelDomains");
 const isRoTLDDomain = require("./isRoTLDDomain");
 const { toASCII } = require("./convertPunycode");
 
@@ -14,8 +14,8 @@ const getRoTLDDomainNameLabels = domainName => {
   domainNameLabels.tld = "ro";
   const domainNameDomain = domainNameParts[domainNameParts.length - 2];
 
-  if (roTLDSubdomains.includes(domainNameDomain)) {
-    domainNameLabels.tldSubdomain = domainNameDomain;
+  if (RoTLDSecondLevelDomains.includes(domainNameDomain)) {
+    domainNameLabels.tldSecondLevelDomain = domainNameDomain;
     domainNameLabels.domain = domainNameParts[domainNameParts.length - 3];
   } else {
     domainNameLabels.domain = domainNameDomain;

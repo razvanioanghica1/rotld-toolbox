@@ -19,14 +19,14 @@ console.log(isRoTLDDomain("ș.com"));
 // -> false
 ```
 
-### Check if a Romanian domain name has a RoTLD subdomain
+### Check if a Romanian domain name has a RoTLD second level domain
 
 ```js
-const hasRoTLDSubdomain = require("rotld-toolbox/hasRoTLDSubdomain");
+const hasRoTLDSecondLevelDomains = require("rotld-toolbox/hasRoTLDSecondLevelDomains");
 
-console.log(hasRoTLDSubdomain("ș.ro"));
+console.log(hasRoTLDSecondLevelDomains("ș.ro"));
 // -> false
-console.log(hasRoTLDSubdomain("ș.www.ro"));
+console.log(hasRoTLDSecondLevelDomains("ș.www.ro"));
 // -> true
 ```
 
@@ -107,7 +107,7 @@ console.log(getRoTLDDomainLabels("ș.www.ro"));
   ->
     {
       domain: "xn--yla",
-      tldSubdomain: "www",
+      tldSecondLevelDomain: "www",
       tld: "ro",
     }
 */
@@ -145,12 +145,12 @@ console.log(RoTLDReservedDomains);
 // -> ['23-august', 'abrămuț', ...'zvoriștea.ro']
 ```
 
-### RoTLDSubdomains
-An array containing a list of RoTLD subdomains. The list is taken weekly from [RoTLD - Rules for Registration](http://www.rotld.ro/reguli-de-inregistrare/).
+### RoTLDSecondLevelDomains
+An array containing a list of RoTLD second level domains. The list is taken weekly from [RoTLD - Rules for Registration](http://www.rotld.ro/reguli-de-inregistrare/).
 
 ```js
-const RoTLDSubdomains = require("rotld-toolbox/RoTLDSubdomains");
+const RoTLDSecondLevelDomains = require("rotld-toolbox/RoTLDSecondLevelDomains");
 
-console.log(RoTLDSubdomains);
+console.log(RoTLDSecondLevelDomains);
 // -> ['com', 'org', ...'www']
 ```

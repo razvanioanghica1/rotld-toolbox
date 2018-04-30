@@ -21,7 +21,7 @@ test("should return true on domain name encoded in Unicode that is a RoTLD reser
   expect(isRoTLDReservedDomain("ș.ro")).toBe(true);
 });
 
-test("should return true on domain name that is a RoTLD reserved domain with RoTLD subdomain", () => {
+test("should return true on domain name that is a RoTLD reserved domain with RoTLD second level domain", () => {
   expect(isRoTLDReservedDomain("ș.www.ro")).toBe(true);
 });
 
