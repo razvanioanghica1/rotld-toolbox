@@ -10,10 +10,14 @@ test("should throw on empty argument", () => {
 });
 
 test("should return false on domain name without romanian tld", () => {
-  expect(isRoTLDReservedDomain("example.com")).toBe(false);
+  expect(isRoTLDReservedDomain("ș.com")).toBe(false);
 });
 
-test("should return true on domain name that is a RoTLD reserved domain", () => {
+test("should return true on domain name encoded in ASCII that is a RoTLD reserved domain", () => {
+  expect(isRoTLDReservedDomain("xn--yla.ro")).toBe(true);
+});
+
+test("should return true on domain name encoded in Unicode that is a RoTLD reserved domain", () => {
   expect(isRoTLDReservedDomain("ș.ro")).toBe(true);
 });
 

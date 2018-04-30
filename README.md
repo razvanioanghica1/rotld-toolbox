@@ -13,9 +13,9 @@ rotld-toolbox is available as the `rotld-toolbox` package on [npm](https://www.n
 ```js
 const isRoTLDDomain = require('rotld-toolbox/isRoTLDDomain');
 
-console.log(isRoTLDDomain('ș.ro'));
+console.log(isRoTLDDomain("ș.ro"));
 // -> true
-console.log(isRoTLDDomain('ș.com'));
+console.log(isRoTLDDomain("ș.com"));
 // -> false
 ```
 
@@ -24,9 +24,9 @@ console.log(isRoTLDDomain('ș.com'));
 ```js
 const hasRoTLDSubdomain = require('rotld-toolbox/hasRoTLDSubdomain');
 
-console.log(hasRoTLDSubdomain('ș.ro'));
+console.log(hasRoTLDSubdomain("ș.ro"));
 // -> false
-console.log(hasRoTLDSubdomain('ș.www.ro'));
+console.log(hasRoTLDSubdomain("ș.www.ro"));
 // -> true
 ```
 
@@ -35,9 +35,9 @@ console.log(hasRoTLDSubdomain('ș.www.ro'));
 ```js
 const isRoTLDReservedDomain = require('rotld-toolbox/isRoTLDReservedDomain');
 
-console.log(isRoTLDReservedDomain('ș.ro'));
+console.log(isRoTLDReservedDomain("ș.ro"));
 // -> false
-console.log(isRoTLDReservedDomain('băicoi.ro'));
+console.log(isRoTLDReservedDomain("băicoi.ro"));
 // -> true
 ```
 
@@ -46,7 +46,7 @@ console.log(isRoTLDReservedDomain('băicoi.ro'));
 ```js
 const queryRoTLDWhoisServer = require('rotld-toolbox/queryRoTLDWhoisServer');
 
-console.log(queryRoTLDWhoisServer('ș.ro').then(whoisResult => console.log(whoisResult)));
+console.log(queryRoTLDWhoisServer("ș.ro").then(whoisResult => console.log(whoisResult)));
 // -> '\n% Whois Server Version 3.0 ...Domain Status: UpdateProhibited\r\n\r\n\r\n'
 ```
 
@@ -55,11 +55,11 @@ console.log(queryRoTLDWhoisServer('ș.ro').then(whoisResult => console.log(whois
 ```js
 const getRoTLDDomainWhois = require('rotld-toolbox/getRoTLDDomainWhois');
 
-getRoTLDDomainWhois('ș.ro').then(whoisResult => console.log(whoisResult));
+getRoTLDDomainWhois("ș.ro").then(whoisResult => console.log(whoisResult));
 /*
   ->
     {
-      domainName: "ș.ro",
+      domainName: "xn--yla.ro",
       registeredOn: "Before 2001",
       expiresOn: "2018-03-14", // in loving memory of Stephen Hawking
       referralUrl: "http://www.rotld.ro",
@@ -70,8 +70,8 @@ getRoTLDDomainWhois('ș.ro').then(whoisResult => console.log(whoisResult));
         ...
       ],
       nameserver: [
-        "ns1.exemplu.ro",
-        "ns2.exemplu.ro",
+        "ns1.xn--yla.ro",
+        "ns2.xn--yla.ro",
         ...
       ]
       dnssec: "Active",
@@ -93,20 +93,20 @@ getRoTLDDomainWhois('ș.ro').then(whoisResult => console.log(whoisResult));
 ```js
 const getRoTLDDomainLabels = require('rotld-toolbox/getRoTLDDomainLabels');
 
-console.log(getRoTLDDomainLabels('ș.ro'));
+console.log(getRoTLDDomainLabels("ș.ro"));
 /*
   ->
     {
-      domain: "ș",
+      domain: "xn--yla",
       tld: "ro"
     }
 */
 
-console.log(getRoTLDDomainLabels('ș.www.ro'));
+console.log(getRoTLDDomainLabels("ș.www.ro"));
 /*
   ->
     {
-      domain: "ș",
+      domain: "xn--yla",
       tldSubdomain: "www",
       tld: "ro",
     }
@@ -118,8 +118,8 @@ console.log(getRoTLDDomainLabels('ș.www.ro'));
 ```js
 const getDomainNameFromURL = require('rotld-toolbox/getDomainNameFromURL');
 
-console.log(getDomainNameFromURL('http://subdomain.ș.ro'));
-// -> subdomain.ș.ro
+console.log(getDomainNameFromURL("http://subdomeniu.ș.com"));
+// -> subdomeniu.xn--yla.com
 ```
 
 ### Convert punycode
@@ -127,9 +127,9 @@ console.log(getDomainNameFromURL('http://subdomain.ș.ro'));
 ```js
 const convertPunycode = require('rotld-toolbox/convertPunycode');
 
-console.log(convertPunycode.toUnicode('xn--yla.ro'));
+console.log(convertPunycode.toUnicode("xn--yla.ro"));
 // -> ș.ro
-console.log(convertPunycode.toASCII('ș.ro'));
+console.log(convertPunycode.toASCII("ș.ro"));
 // -> xn--yla.ro
 ```
 

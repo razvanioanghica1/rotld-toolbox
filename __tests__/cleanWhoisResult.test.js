@@ -1,5 +1,6 @@
 const cleanWhoisResult = require("../cleanWhoisResult");
-const mockedQueryRoTLDWhoisServer = require("../__mocks__/queryRoTLDWhoisServer");
+const queryRoTLDWhoisServer = require("../queryRoTLDWhoisServer");
+jest.mock("../queryRoTLDWhoisServer");
 
 test("should throw without argument", () => {
   return expect(() => cleanWhoisResult()).toThrow();
@@ -12,11 +13,11 @@ test("should throw with empty argument", () => {
 test("should return array containing cleaned WHOIS result lines", () => {
   expect.assertions(1);
 
-  return mockedQueryRoTLDWhoisServer("exemplu.ro").then(whoisResult =>
+  return queryRoTLDWhoisServer("ș.ro").then(whoisResult =>
     expect(cleanWhoisResult(whoisResult)).toEqual([
-      "Domain Name: exemplu.ro",
+      "Domain Name: xn--yla.ro",
       "Registered On: Before 2001",
-      "Expires On: 2099-01-01",
+      "Expires On: 2018-03-14",
       "Registrar: ICI - Registrar",
       "Referral URL: http://www.rotld.ro",
       "DNSSEC: Active",
@@ -36,10 +37,10 @@ test("should return array containing cleaned WHOIS result lines", () => {
       "DS Algorithm #4: 7-RSASHA1-NSEC3-SHA1",
       "DS Digest Type #4: 2-SHA256",
       "DS Digest #4: 29feb74a3a7bf0b95c7aace5aef18c1fbf749c02fd493340ed8e19974cc324f7",
-      "Nameserver: ns1.exemplu.ro",
-      "Nameserver: ns2.exemplu.ro",
-      "Nameserver: ns3.exemplu.ro",
-      "Nameserver: ns4.exemplu.ro",
+      "Nameserver: ns1.xn--yla.ro",
+      "Nameserver: ns2.xn--yla.ro",
+      "Nameserver: ns3.xn--yla.ro",
+      "Nameserver: ns4.xn--yla.ro",
       "Domain Status: DeleteProhibited",
       "Domain Status: RegistrantTransferProhibited",
       "Domain Status: TransferProhibited",

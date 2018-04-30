@@ -13,9 +13,9 @@ test("should throw with invalid domain", () => {
 });
 
 test("should return true on domain with romanian tld", () => {
-  expect(isRoTLDDomain("subdomain.example.ro")).toBe(true);
+  expect(isRoTLDDomain("subdomeniu.ș.ro")).toBe(true);
 });
 
 test("should return false on domain without romanian tld", () => {
-  expect(isRoTLDDomain("subdomain.example.com")).toBe(false);
+  expect(isRoTLDDomain("subdomeniu.ș.com")).toBe(false);
 });
