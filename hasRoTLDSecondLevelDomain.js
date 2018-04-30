@@ -1,6 +1,6 @@
-const getRoTLDDomainLabels = require("./getRoTLDDomainLabels");
+const getRoTLDWhoisDomainLabels = require("./getRoTLDWhoisDomainLabels");
 
 const hasRoTLDSecondLevelDomains = domainName =>
-  Boolean(getRoTLDDomainLabels(domainName).tldSecondLevelDomain);
+  Boolean(getRoTLDWhoisDomainLabels(domainName).tldSecondLevelDomain);
 
 module.exports = hasRoTLDSecondLevelDomains;

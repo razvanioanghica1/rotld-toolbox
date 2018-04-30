@@ -1,5 +1,5 @@
 const isRoTLDDomain = require("./isRoTLDDomain.js");
-const getRoTLDDomainLabels = require("./getRoTLDDomainLabels");
+const getRoTLDWhoisDomainLabels = require("./getRoTLDWhoisDomainLabels");
 const { toUnicode } = require("./convertPunycode");
 const RoTLDReservedDomains = require("./RoTLDReservedDomains");
 
@@ -8,7 +8,7 @@ const isRoTLDReservedDomain = domainName => {
     return false;
   }
 
-  const domainNameLabels = getRoTLDDomainLabels(domainName);
+  const domainNameLabels = getRoTLDWhoisDomainLabels(domainName);
 
   let domain = `${domainNameLabels.domain}`;
 

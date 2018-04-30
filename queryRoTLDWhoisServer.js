@@ -1,4 +1,5 @@
 const isRoTLDDomain = require("./isRoTLDDomain");
+const getRoTLDWhoisDomainLabels = require("./getRoTLDWhoisDomainLabels");
 const net = require("net");
 const { toASCII } = require("./convertPunycode");
 
@@ -12,6 +13,10 @@ const queryRoTLDWhoisServer = domainName =>
           "Can't query a domain name that doesn't contain a Romanian top level domain."
         )
       );
+    }
+
+    if (getRoTLDWhoisDomainLabels(domainName).subdomain) {
+      reject(new Error("Can't query a domain name that contains a subdomain."));
     }
 
     const connection = net.connect(43, "whois.rotld.ro", () => {

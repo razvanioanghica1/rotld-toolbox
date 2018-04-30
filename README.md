@@ -88,12 +88,12 @@ getRoTLDDomainWhois("ș.ro").then(whoisResult => console.log(whoisResult));
 */
 ```
 
-### Get domain labels for a Romanian domain name
+### Get WHOIS domain labels for a Romanian domain name
 
 ```js
-const getRoTLDDomainLabels = require("rotld-toolbox/getRoTLDDomainLabels");
+const getRoTLDWhoisDomainLabels = require("rotld-toolbox/getRoTLDWhoisDomainLabels");
 
-console.log(getRoTLDDomainLabels("ș.ro"));
+console.log(getRoTLDWhoisDomainLabels("ș.ro"));
 /*
   ->
     {
@@ -102,10 +102,21 @@ console.log(getRoTLDDomainLabels("ș.ro"));
     }
 */
 
-console.log(getRoTLDDomainLabels("ș.www.ro"));
+console.log(getRoTLDWhoisDomainLabels("www.șubdomeniu.ș.ro"));
 /*
   ->
     {
+      subdomain: "subdomeniu",
+      domain: "xn--yla",
+      tld: "ro"
+    }
+*/
+
+console.log(getRoTLDWhoisDomainLabels("subdomeniu.ș.www.ro"));
+/*
+  ->
+    {
+      subdomain: "subdomeniu",
       domain: "xn--yla",
       tldSecondLevelDomain: "www",
       tld: "ro",
@@ -118,8 +129,8 @@ console.log(getRoTLDDomainLabels("ș.www.ro"));
 ```js
 const getHostnameFromURL = require("rotld-toolbox/getHostnameFromURL");
 
-console.log(getHostnameFromURL("http://subdomeniu.ș.com"));
-// -> subdomeniu.xn--yla.com
+console.log(getHostnameFromURL("http://subdomeniu.subdomeniu.ș.com"));
+// -> subdomeniu.subdomeniu.xn--yla.com
 ```
 
 ### Convert punycode

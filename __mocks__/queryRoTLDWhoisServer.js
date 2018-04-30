@@ -1,4 +1,5 @@
 const isRoTLDDomain = require("../isRoTLDDomain");
+const getRoTLDWhoisDomainLabels = require("../getRoTLDWhoisDomainLabels");
 
 const queryRoTLDWhoisServer = domainName =>
   new Promise((resolve, reject) => {
@@ -8,6 +9,10 @@ const queryRoTLDWhoisServer = domainName =>
           "Can't query a domain name that doesn't contain a Romanian top level domain."
         )
       );
+    }
+
+    if (getRoTLDWhoisDomainLabels(domainName).subdomain) {
+      reject(new Error("Can't query a domain name that contains a subdomain."));
     }
 
     resolve(

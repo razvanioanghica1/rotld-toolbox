@@ -15,6 +15,13 @@ test("should reject on domain name without Romanian tld", () => {
   return expect(queryRoTLDWhoisServer("ș.com")).rejects.toBeInstanceOf(Error);
 });
 
+test("should reject on domain name with subdomain that has a Romanian tld", () => {
+  expect.assertions(1);
+  return expect(
+    queryRoTLDWhoisServer("subdomeniu.ș.ro")
+  ).rejects.toBeInstanceOf(Error);
+});
+
 test("should resolve with whois data on domain name with Romanian tld", () => {
   return expect(queryRoTLDWhoisServer("ș.ro")).resolves.toMatch(
     /Whois Server Version 3.0/
