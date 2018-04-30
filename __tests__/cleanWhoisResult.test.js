@@ -48,3 +48,11 @@ test("should return array containing cleaned WHOIS result lines", () => {
     ])
   );
 });
+
+test("should return an empty array if domain doesn't exists", () => {
+  expect.assertions(1);
+
+  return queryRoTLDWhoisServer("notfound.ro").then(whoisResult =>
+    expect(cleanWhoisResult(whoisResult)).toEqual([])
+  );
+});

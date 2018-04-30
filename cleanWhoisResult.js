@@ -7,6 +7,10 @@ const cleanWhoisResult = whoisResult => {
     throw new TypeError("Can't clean an empty WHOIS result.");
   }
 
+  if (whoisResult.includes("No entries found for the selected source(s)")) {
+    return [];
+  }
+
   return (
     whoisResult
       // Split whois data into lines
