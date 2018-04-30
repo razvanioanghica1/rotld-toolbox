@@ -6,7 +6,9 @@ Simple tools for working with RoTLD (Romania Top Level Domain).
 
 rotld-toolbox is available as the `rotld-toolbox` package on [npm](https://www.npmjs.com/). You can find it [here](https://www.npmjs.com/package/rotld-toolbox).
 
-## Tools
+## Usage
+
+Until in-depth documentation is available, take a look at the examples below to understand how these tools might be used.
 
 ### Check if a domain name has a Romanian TLD
 
