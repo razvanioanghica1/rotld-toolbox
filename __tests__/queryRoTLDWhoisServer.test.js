@@ -22,6 +22,19 @@ test("should reject on domain name with subdomain that has a Romanian tld", () =
   ).rejects.toBeInstanceOf(Error);
 });
 
+test("should reject with domain name with subdomain that has a Romanian tld and reserved RoTLD second level domain", () => {
+  expect.assertions(1);
+  return expect(
+    queryRoTLDWhoisServer("subdomeniu.ș.www.ro")
+  ).rejects.toBeInstanceOf(Error);
+});
+
+test("should resolve with whois data on domain name with Romanian tld and reserved RoTLD second level domain", () => {
+  return expect(queryRoTLDWhoisServer("ș.www.ro")).resolves.toMatch(
+    /Whois Server Version 3.0/
+  );
+});
+
 test("should resolve with whois data on domain name with Romanian tld", () => {
   return expect(queryRoTLDWhoisServer("ș.ro")).resolves.toMatch(
     /Whois Server Version 3.0/
