@@ -9,6 +9,7 @@
     "pretest": "yarn lint",
     "test": "jest --coverage",
     "lint": "eslint ."
+    "prepack": "yarn lint && yarn test"
   },
   "dependencies": {
     "punycode": "^2.1.0"
