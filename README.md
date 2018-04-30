@@ -116,9 +116,9 @@ console.log(getRoTLDDomainLabels("ș.www.ro"));
 ### Get domain name from an URL
 
 ```js
-const getDomainNameFromURL = require("rotld-toolbox/getDomainNameFromURL");
+const getHostnameFromURL = require("rotld-toolbox/getHostnameFromURL");
 
-console.log(getDomainNameFromURL("http://subdomeniu.ș.com"));
+console.log(getHostnameFromURL("http://subdomeniu.ș.com"));
 // -> subdomeniu.xn--yla.com
 ```
 
