@@ -8,7 +8,7 @@ const isRoTLDReservedDomain = domainName => {
     return false;
   }
 
-  const domainNameLabels = getRoTLDDomainLabels(toUnicode(domainName));
+  const domainNameLabels = getRoTLDDomainLabels(domainName);
 
   let domain = `${domainNameLabels.domain}`;
 
@@ -21,7 +21,7 @@ const isRoTLDReservedDomain = domainName => {
     domain += `.${domainNameLabels.tldSubdomain}`;
   }
 
-  return RoTLDReservedDomains.includes(domain);
+  return RoTLDReservedDomains.includes(toUnicode(domain));
 };
 
 module.exports = isRoTLDReservedDomain;

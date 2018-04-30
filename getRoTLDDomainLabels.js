@@ -1,5 +1,6 @@
 const roTLDSubdomains = require("./RoTLDSubdomains");
 const isRoTLDDomain = require("./isRoTLDDomain");
+const { toASCII } = require("./convertPunycode");
 
 const getRoTLDDomainNameLabels = domainName => {
   if (!isRoTLDDomain(domainName)) {
@@ -9,8 +10,8 @@ const getRoTLDDomainNameLabels = domainName => {
   }
 
   const domainNameLabels = {};
-  domainNameLabels.tld = "ro";
   const domainNameParts = domainName.split(".");
+  domainNameLabels.tld = "ro";
   const domainNameDomain = domainNameParts[domainNameParts.length - 2];
 
   if (roTLDSubdomains.includes(domainNameDomain)) {
@@ -20,6 +21,7 @@ const getRoTLDDomainNameLabels = domainName => {
     domainNameLabels.domain = domainNameDomain;
   }
 
+  domainNameLabels.domain = toASCII(domainNameLabels.domain);
   return domainNameLabels;
 };
 

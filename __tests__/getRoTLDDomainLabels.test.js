@@ -9,20 +9,20 @@ test("should throw on empty argument", () => {
 });
 
 test("should throw on domain without romanian tld", () => {
-  expect(() => getRoTLDDomainLabels("example.com")).toThrow();
+  expect(() => getRoTLDDomainLabels("ș.com")).toThrow();
 });
 
 test("should return object containing domain and tld on domain with romanian tld", () => {
-  expect(getRoTLDDomainLabels("example.ro")).toEqual({
-    domain: "example",
+  expect(getRoTLDDomainLabels("ș.ro")).toEqual({
+    domain: "xn--yla",
     tld: "ro"
   });
 });
 
 test("should return object containing domain, tld and subdomain on domain with romanian tld and RoTLD subdomain", () => {
-  expect(getRoTLDDomainLabels("example.com.ro")).toEqual({
-    domain: "example",
-    tld: "ro",
-    tldSubdomain: "com"
+  expect(getRoTLDDomainLabels("ș.rec.ro")).toEqual({
+    domain: "xn--yla",
+    tldSubdomain: "rec",
+    tld: "ro"
   });
 });
