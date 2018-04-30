@@ -10,6 +10,14 @@ test("should throw with empty argument", () => {
   return expect(() => cleanWhoisResult("")).toThrow();
 });
 
+test("should return an empty array if domain doesn't exist", () => {
+  expect.assertions(1);
+
+  return queryRoTLDWhoisServer("notfound.ro").then(whoisResult =>
+    expect(cleanWhoisResult(whoisResult)).toEqual([])
+  );
+});
+
 test("should return array containing cleaned WHOIS result lines", () => {
   expect.assertions(1);
 
@@ -46,13 +54,5 @@ test("should return array containing cleaned WHOIS result lines", () => {
       "Domain Status: TransferProhibited",
       "Domain Status: UpdateProhibited"
     ])
-  );
-});
-
-test("should return an empty array if domain doesn't exists", () => {
-  expect.assertions(1);
-
-  return queryRoTLDWhoisServer("notfound.ro").then(whoisResult =>
-    expect(cleanWhoisResult(whoisResult)).toEqual([])
   );
 });
