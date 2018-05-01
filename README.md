@@ -121,6 +121,18 @@ console.log(getRoTLDWhoisDomainLabels("subdomeniu.ș.www.ro"));
 */
 ```
 
+### Get RoTLD domain fron hostname
+
+```js
+const getRoTLDDomainFromHostname = require("rotld-toolbox/getRoTLDDomainFromHostname");
+
+console.log(getRoTLDDomainFromHostname("subdomeniu.ș.ro"));
+// -> xn--yla.ro
+
+console.log(getRoTLDDomainFromHostname("subdomeniu.ș.www.ro"));
+// -> xn--yla.www.ro
+```
+
 ### Get hostname from an URL
 
 ```js
