@@ -149,6 +149,7 @@ const convertPunycode = require("rotld-toolbox/convertPunycode");
 
 console.log(convertPunycode.toUnicode("xn--yla.ro"));
 // -> ș.ro
+
 console.log(convertPunycode.toASCII("ș.ro"));
 // -> xn--yla.ro
 ```
