@@ -1,8 +1,9 @@
+exports.cleanWhoisResult = require("./cleanWhoisResult");
 exports.convertPunycode = require("./convertPunycode");
+exports.convertWhoisResultToJson = require("./convertWhoisResultToJson");
 exports.getHostnameFromURL = require("./getHostnameFromURL");
 exports.getRoTLDWhoisDomainLabels = require("./getRoTLDWhoisDomainLabels");
 exports.hasRoTLDSecondLevelDomain = require("./hasRoTLDSecondLevelDomain");
 exports.isRoTLDDomain = require("./isRoTLDDomain");
 exports.isRoTLDReservedDomain = require("./isRoTLDReservedDomain");
 exports.queryRoTLDWhoisServer = require("./queryRoTLDWhoisServer");
-exports.convertWhoisResultToJson = require("./convertWhoisResultToJson");
