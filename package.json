@@ -6,10 +6,10 @@
     "node": ">=6.0.0"
   },
   "scripts": {
+    "lint": "eslint .",
     "pretest": "yarn lint",
     "test": "jest",
-    "lint": "eslint .",
-    "prepack": "yarn lint && yarn test"
+    "prepack": "yarn test"
   },
   "dependencies": {
     "camelcase": "^5.0.0",
