@@ -20,9 +20,9 @@ console.log(isRoTLDDomain("ș.ro"));
 ### Check if a Romanian domain name has a RoTLD second level domain
 
 ```js
-const hasRoTLDSecondLevelDomains = require("rotld-toolbox/hasRoTLDSecondLevelDomains");
+const hasRoTLDSecondLevelDomain = require("rotld-toolbox/hasRoTLDSecondLevelDomain");
 
-console.log(hasRoTLDSecondLevelDomains("ș.ro"));
+console.log(hasRoTLDSecondLevelDomain("ș.ro"));
 // -> false
 ```
 
