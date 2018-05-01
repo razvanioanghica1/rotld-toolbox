@@ -7,3 +7,5 @@ __tests__
 .eslint*
 .travis.yml
 yarn.lock
+codecov.yml
+jest.config.js
