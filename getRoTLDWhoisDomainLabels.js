@@ -2,7 +2,7 @@ const RoTLDSecondLevelDomains = require("./RoTLDSecondLevelDomains");
 const isRoTLDDomain = require("./isRoTLDDomain");
 const { toASCII } = require("./convertPunycode");
 
-const getRoTLDWhoisDomainNameLabels = domainName => {
+const getRoTLDWhoisDomainLabels = domainName => {
   if (!isRoTLDDomain(domainName)) {
     throw new Error(
       "Can't decode a domain name that doesn't contain a Romanian top level domain."
@@ -32,4 +32,4 @@ const getRoTLDWhoisDomainNameLabels = domainName => {
   return domainNameLabels;
 };
 
-module.exports = getRoTLDWhoisDomainNameLabels;
+module.exports = getRoTLDWhoisDomainLabels;
