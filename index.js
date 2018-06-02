@@ -5,6 +5,6 @@ exports.getHostnameFromURL = require("./getHostnameFromURL");
 exports.getRoTLDDomainFromHostname = require("./getRoTLDDomainFromHostname");
 exports.getRoTLDWhoisDomainLabels = require("./getRoTLDWhoisDomainLabels");
 exports.hasRoTLDSecondLevelDomain = require("./hasRoTLDSecondLevelDomain");
-exports.isRoTLDDomain = require("./isRoTLDDomain");
+exports.hasRoTLDTopLevelDomain = require("./hasRoTLDTopLevelDomain");
 exports.isRoTLDReservedDomain = require("./isRoTLDReservedDomain");
 exports.queryRoTLDWhoisServer = require("./queryRoTLDWhoisServer");

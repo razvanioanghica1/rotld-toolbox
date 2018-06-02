@@ -1,4 +1,4 @@
-const isRoTLDDomain = domainName => {
+const hasRoTLDTopLevelDomain = domainName => {
   if (typeof domainName !== "string") {
     throw new TypeError("Argument must be a string.");
   }
@@ -16,4 +16,4 @@ const isRoTLDDomain = domainName => {
   return domainNameLabels.pop() === "ro";
 };
 
-module.exports = isRoTLDDomain;
+module.exports = hasRoTLDTopLevelDomain;

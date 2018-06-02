@@ -8,12 +8,12 @@ rotld-toolbox is available as the `rotld-toolbox` package on [npm](https://www.n
 
 Until in-depth documentation is available, take a look at the examples below.
 
-### Check if a domain name has a Romanian TLD
+### Check if a domain name has a RoTLD top level domain
 
 ```js
-const isRoTLDDomain = require("rotld-toolbox/isRoTLDDomain");
+const hasRoTLDTopLevelDomain = require("rotld-toolbox/hasRoTLDTopLevelDomain");
 
-console.log(isRoTLDDomain("ș.ro"));
+console.log(hasRoTLDTopLevelDomain("ș.ro"));
 // -> true
 ```
 
