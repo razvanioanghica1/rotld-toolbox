@@ -1,6 +1,6 @@
 ## 3.0.0 (June 2, 2018)
 
-Rename isRoTLDDomain to hasRoTLDSecondLevelDomain.
+Rename isRoTLDDomain to hasRoTLDTopLevelDomain.
 
 ## 2.1.0 (May 1, 2018)
 
