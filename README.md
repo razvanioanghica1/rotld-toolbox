@@ -22,7 +22,10 @@ console.log(hasRoTLDTopLevelDomain("ș.ro"));
 ```js
 const hasRoTLDSecondLevelDomain = require("rotld-toolbox/hasRoTLDSecondLevelDomain");
 
-console.log(hasRoTLDSecondLevelDomain("ș.ro"));
+console.log(hasRoTLDSecondLevelDomain("ș.com.ro"));
+// -> true
+
+console.log(hasRoTLDSecondLevelDomain("ș.example.ro"));
 // -> false
 ```
 
